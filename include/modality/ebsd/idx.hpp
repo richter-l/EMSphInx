@@ -227,7 +227,7 @@ namespace emsphinx {
 			} else if("Bruker" == nml.ven || "tsl" == nml.ven) {
 				geom.patternCenterBruker(nml.pctr[0], nml.pctr[1], nml.pctr[2]);
 			} else throw std::runtime_error("unknown vendor for pattern center `" + nml.ven + "'");
-			geom.maskPattern(nml.circRad == 0);
+			geom.maskPattern(nml.circRad >= 0);
 			geom.flipPattern(pat->flipY());
 
 			//determine threading / batch values
